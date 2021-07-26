@@ -1,0 +1,250 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.nav__pc {
+    height: 54px;
+    background-color: #009cd7;
+    display: flex;
+}
+
+.nav__mobile {
+    display: none;
+}
+
+.nav__pc-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    margin: auto;
+    width: 1020px;
+}
+
+.nav__pc-logo {
+    margin-left: 8px;
+    letter-spacing: -1px;
+    color: #fff;
+    text-decoration: none;
+}
+
+.nav__pc-list {
+    list-style: none;
+    display: flex;
+}
+
+.nav__pc-item {
+    margin-left: 28px;
+}
+
+.nav__pc-item:hover {
+    opacity: 0.9;
+}
+
+.nav__pc-item:last-child {
+    margin-right: 8px;
+}
+
+.nav__pc-item a {
+    text-decoration: none;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.nav__mobile-list {
+    display: none;
+}
+
+/* Body */
+.body {
+    background-color: #f7f7f7;
+    display: flex;
+}
+
+.body__content {
+    max-width: 1020px;
+    width: 95%;
+    margin: 28px auto 28px auto;
+    background-color: #fff;
+}
+
+.wrapper {
+    padding: 48px;
+}
+
+.content__title {
+    font-size: 36px;
+    margin: 12px 0;
+}
+
+.main-content__text {
+    margin: 24px 0;
+    text-align: justify;
+    line-height: 1.7;
+    font-size: 18px;
+    color: #111111;
+}
+
+.main-content__text--bold {
+    font-weight: 600;
+}
+
+.image-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-bottom: 1px dotted #ccc;
+}
+
+.image-wrapper img {
+    max-width: 850px;
+    width: 100%;
+}
+
+.image__dsc {
+    font-size: 14px;
+    margin-top: 8px;
+    text-align: center;
+}
+
+.image__src {
+    font-size: 11px;
+    margin-top: 4px;
+    margin-bottom: 12px;
+    color: rgb(170, 166, 166);
+}
+
+@media (max-width: 739px) {
+    .nav__pc {
+        display: none;
+    }
+
+    .body__content {
+        margin: 8px 0;
+        flex: 1;
+    }
+
+    .wrapper {
+        padding: 24px;
+    }
+
+    /* Navigation Mobile */
+    .nav__mobile {
+        display: block;
+        height: 46px;
+        background-color: #009cd7;
+        position: relative;
+    }
+
+    .nav__mobile-wrapper {
+        display: flex;
+        justify-content: space-between;
+        padding: 0 12px;
+    }
+    
+    .nav__mobile-wrapper h3 {
+        color: #fff;
+        letter-spacing: -1px;
+    }
+
+    .nav__mobile-logo {
+        text-decoration: none;
+        line-height: 46px;
+    }
+
+    .menu-mobile-option {
+        display: flex;
+        align-items: center;
+    }
+    
+    .menu-mobile__btn {
+        color: #fff;
+        text-decoration: none;
+        padding: 6px 24px;
+    }
+
+    .menu-mobile__btn:nth-child(3) {
+        margin-right: -12px;
+        color: #fff;
+    }
+
+    .menu-mobile__btn:nth-child(2),
+    .menu-mobile__btn:nth-child(3) {
+        border-left: 1px solid #4dbae3;
+    }
+
+    .nav__mobile-list {
+        display: flex;
+        flex-direction: column;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        background-color: #fff;
+        width: 280px;
+        max-width: 100%;
+        z-index: 1;
+        opacity: 0;
+        transform: translateX(100%);
+        transition: all linear 0.2s;
+    }
+
+    .nav__mobile-list-header {
+        text-align: right;
+    }
+
+    .nav__mobile-list-header-icon {
+        font-size: 28px;
+        padding: 10px 18px;
+        color: #000;
+    }
+    
+    .nav__mobile-item {
+        list-style: none;
+        padding: 16px 16px;
+    }
+    
+    .nav__mobile-item a {
+        text-decoration: none;
+        color: #111111;
+        display: block;
+    } 
+    
+    /* Enable and disbale menu option */
+    .nav__input:checked ~.nav__overlay {
+        display: block;
+    }
+
+    .nav__input:checked ~.nav__mobile-list {
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    /* Overlay */
+    .nav__overlay {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.3);
+        display: none;
+        animation: fadeIn linear 0.2s;
+    }
+} 
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
